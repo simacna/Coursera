@@ -10,13 +10,17 @@ class Assignment
       # accept a hash of user properties (`:username` and `:password_digest`) as an input parameter. Note these are 100% same as model class.
       # use the User Model class to create a new user in the DB
       # return an instance of the class with primary key (`id`), and dates (`created_at` and `updated_at`) assigned
-      u = User.create(params[username: params["username"], password_digest: params["password_digest"]])
+      # @user = User.create(params[username: params["username"], password_digest: params["password_digest"]])
+      # return @user()
+       @u = User.create(username: params[:username],password_digest: params[:password_digest])
   end
 
   def create_todolist(params)
       # accept a hash of todolist properties (`:name` and `:due_date`) as an input parameter. Note these are not 100% the same as Model class.
       # use the TodoList Model class to create a new user in the DB
       # return an instance of the class with primary key (`id`), and dates (`created_at` and `updated_at`) assigned
+
+      @todo = TodoList.create(list_name: params[:name], list_due_date: params[:due_date])
   end
 
   #
@@ -26,6 +30,10 @@ class Assignment
       # accept offset and limit input parameters
       # use the User Model class to find all Users, ordered by `updated_at` ascending, with specified row offset and row limit
       # return a collection of User instances that represent the specified rows
+
+      #@user = User.find_all('updated_at ASC').limit(:limit).offset(:offset)
+      #@users = User.find(:all, :updated_at => "ASC").limit(:limit).offset(:offset)
+      @users = User.find(id).order(created_at: :asc).limit(:limit).offset(:offset)
   end
 
   def find_alllists(offset, limit)
