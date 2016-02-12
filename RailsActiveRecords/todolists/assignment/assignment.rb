@@ -54,7 +54,7 @@ class Assignment
       # use the User Model class to find all Users with the supplied username. 
       # NOTE:  Username is not unique in the Users table, thus you can have many users with the same username.
       # return a collection of User instances that match the provided username  
-      @user = User.all(:username => username)
+      @user = User.where(username: username)
   end 
 
   def find_todolist_byname(name)
@@ -62,7 +62,7 @@ class Assignment
       # use the TodoList Model class to find all TodoLists with the supplied list_name. 
       # NOTE: List name is not required to be unique, thus you can have many lists with the same list name.
       # return a collection of TodoList instances that match the provided name
-      @todo = TodoList.all(name)
+      @todo = TodoList.where(list_name: name)
   end     
 
   #
@@ -107,11 +107,14 @@ class Assignment
       # accept an id input parameter
       # use the User Model class to remove the User associated with the `id` primary key from the database
       # (no return is required)
+      User.destroy(id)
+
   end 
 
   def delete_todolist(id)
       # accept an id input parameter
       # use the TodoList Model class to remove the TodoList associated with the `id` primary key.
       # (no return is required)
+      TodoList.destroy(id)
   end
 end
