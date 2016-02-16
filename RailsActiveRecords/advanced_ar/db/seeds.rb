@@ -1,5 +1,5 @@
 # Job.destroy_all
-# Person.destroy_all
+Person.destroy_all
 
 Person.create! [
   { first_name: "Kalman", last_name: "Smith", age: 33, login: "kman", pass: "abc123" },
@@ -19,15 +19,15 @@ Person.create! [
 # Person.find_by!(first_name: "Bill").create_personal_info(height: 6.1, weight: 199)
 # Person.find_by!(first_name: "LeBron").create_personal_info(height: 7.0, weight: 250)
 
-# Person.first.jobs.create! [
-#   { title: "Developer", company: "MS", position_id: "#1234" },
-#   { title: "Developer", company: "MS", position_id: "#1235" }
-# ]
+Person.first.jobs.create! [
+  { title: "Developer", company: "MS", position_id: "#1234" },
+  { title: "Developer", company: "MS", position_id: "#1235" }
+]
 
-# Person.last.jobs.create! [
-#   { title: "Sr. Developer", company: "MS", position_id: "#5234" },
-#   { title: "Sr. Developer", company: "MS", position_id: "#5235" }
-# ]
+Person.last.jobs.create! [
+  { title: "Sr. Developer", company: "MS", position_id: "#5234" },
+  { title: "Sr. Developer", company: "MS", position_id: "#5235" }
+]
 
 # Person.create! [
 #   { first_name: "Kalman", last_name: "Smith", age: 33},
