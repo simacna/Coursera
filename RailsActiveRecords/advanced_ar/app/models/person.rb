@@ -11,4 +11,6 @@ class Person < ActiveRecord::Base
     approx_salaries.maximum(:max_salary)
   end
   
+  scope :ordered_by_age, -> {order age: :desc}
+  scope :starts_with, -> (starting_string){ where("first_name LIKE ?", "#{starting_string}%")}
 end
