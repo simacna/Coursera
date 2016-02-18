@@ -7,10 +7,10 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-TodoItem.destroy_all
-TodoList.destroy_all
-Profile.destroy_all
-User.destroy_all
+# TodoItem.destroy_all
+# TodoList.destroy_all
+# Profile.destroy_all
+#User.destroy_all
 
 people_list = [
   ["Carly","Fiorina",1954,"female","fff"],
@@ -19,9 +19,12 @@ people_list = [
   ["Hillary","Clinton",1954,"female","ccc"]
 ]
 
-#i = 1
-people_list.each do |first, last, birth, gender, pass|
-  User.create!(username: last, password_digest: pass)
-  #User.find(i).profiles.create!(first_name: first, last_name: last, birth_year: birth, gender: gender)
-  #i++
-end
+
+# people_list.each do |first, last, birth, gender, pass|
+#   User.create!(username: last, password_digest: pass)
+# end
+
+# people_list.each do |first, last, birth, gender|
+#   Profile.create!(gender: gender, birth_year: birth, first_name: first, last_name: last)
+# end
+
