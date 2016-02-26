@@ -1,6 +1,7 @@
 class TodoItem < ActiveRecord::Base
 
   def self.counts
-    @c =TodoItem.count
+    TodoItem.where(completed: true).count
   end
+  
 end

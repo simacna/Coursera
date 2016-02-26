@@ -23,7 +23,7 @@
     <%= f.label :description %><br>
     <%= f.text_field :description %>
   </div>
-  <% if @todo_item.completed %> -->
+  <% if @todo_item.persisted? %> 
     <div class="field">
       <%= f.label :completed %><br>
       <%= f.check_box :completed %>
