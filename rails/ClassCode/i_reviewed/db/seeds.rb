@@ -1,4 +1,4 @@
-Reviewer.destroy_all
+#Reviewer.destroy_all
 Book.destroy_all
 
 Book.create! [
@@ -11,11 +11,12 @@ Book.create! [
 
 # 100.times { |index| Book.create! name: "Book#{index}", author: "Author#{index}" }
 
-# eloquent = Book.find_by name: "Eloquent Ruby"
-# eloquent.notes.create! [
-#   { title: "Wow", note: "Great book to learn Ruby"},
-#   { title: "Funny", note: "Doesn't put you to sleep"}
-# ]
+#below: find me a book with a certain name
+eloquent = Book.find_by name: "Eloquent Ruby"
+eloquent.notes.create! [
+  { title: "Wow", note: "Great book to learn Ruby"},
+  { title: "Funny", note: "Doesn't put you to sleep"}
+]
 
 # reviewers = Reviewer.create! [
 #   { name: "Joe", password: "abc123" },
