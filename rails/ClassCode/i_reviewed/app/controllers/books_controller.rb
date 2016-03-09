@@ -6,9 +6,11 @@ class BooksController < ApplicationController
   def index
     #below would give us all books where as we want only books allowed to be seen
     #by a current user
-    #@books = Book.all
+    # @books = Book.all
 
-    @books = current_user.books.all
+  #  @books = current_user.books.all
+
+    @books = current_user.books.paginate(page: params[:page], per_page: 10)
   end
 
   # GET /books/1

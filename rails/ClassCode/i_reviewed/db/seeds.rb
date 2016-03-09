@@ -1,4 +1,4 @@
-#Reviewer.destroy_all
+Reviewer.destroy_all
 Book.destroy_all
 
 Book.create! [
@@ -9,7 +9,7 @@ Book.create! [
   { name: "The Ruby Programming Language", author: "David Flanagan" }
 ]
 
-# 100.times { |index| Book.create! name: "Book#{index}", author: "Author#{index}" }
+100.times { |index| Book.create! name: "Book#{index}", author: "Author#{index}" }
 
 #below: find me a book with a certain name
 eloquent = Book.find_by name: "Eloquent Ruby"
