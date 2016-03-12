@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    #binding.pry
+    # binding.pry
     reviewer = Reviewer.find_by(name: params[:reviewer][:name])
     password = params[:reviewer][:password]
 

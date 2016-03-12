@@ -18,7 +18,8 @@ class NotesController < ApplicationController
 
   private
     def set_book
-      @book = Book.find(params[:id])
+      #@book = Book.find(params[:id])
+      @book = current_user.books.find(params[:id])
     end
 
     def note_params
