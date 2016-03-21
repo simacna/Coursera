@@ -109,16 +109,29 @@
 // }
 
 
-function t(){
-  console.log(this);
+// below will be window object
+
+// function t(){
+//   console.log(this);
+// }
+//  t();
+
+// function multi(multiplier){
+//   //this is the same as having 
+//   // var multiplier = 2;
+//   return (function(x){
+//     return multiplier * x;
+//   });
+// }
+
+// var double = multi(2);
+// console.log(double(2));
+
+
+
+var name = "Sina";
+function sayHello(){
+  console.log("hello " + name);
 }
- t();
-
-
-
-
-
-
-
 
 
