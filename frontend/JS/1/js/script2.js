@@ -1,4 +1,6 @@
-var name = "John";
-function sayHi(){
-  console.log("Hi" + name);
-}
+// var johnGreeting = {};
+
+// johnGreeting.name = "John";
+// johnGreeting.sayHello = function(){
+//   console.log("HELLO " + johnGreeting.name);
+// }

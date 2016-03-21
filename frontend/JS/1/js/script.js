@@ -127,11 +127,37 @@
 // var double = multi(2);
 // console.log(double(2));
 
+//below is from lecture 52, faking
+// namespaces so variables don't overlap
+//but it's best to use iffe's
+
+// var sinaGreeting = {};
+
+// sinaGreeting.name = "Sina";
+
+// sinaGreeting.sayHi = function(){
+//   console.log("Hi " + sinaGreeting.name);
+// }
 
 
-var name = "Sina";
-function sayHello(){
-  console.log("hello " + name);
-}
+// (function(window){
+//   var name = "Sina";
+//   function sayHi(){
+//     console.log("Hi " + name);
+//   }
+//   window.sayHi() = sayHi;
+// })(window);
+
+
+
+
+
+
+
+
+
+
+
+
 
 
