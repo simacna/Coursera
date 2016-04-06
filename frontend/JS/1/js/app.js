@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded",
 // Below are different ways of handling events
 //without adding onclick to html
 
-// document.querySelector("button")
-// .addEventListener("click", sayIt);
+document.querySelector("button")
+.addEventListener("click", sayIt);
 
-document.querySelector("button").onclick = sayIt;
+// document.querySelector("button").onclick = sayIt;
