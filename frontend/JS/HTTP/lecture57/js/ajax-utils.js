@@ -6,7 +6,7 @@
   //Returns an HTTP request object
 
   function getRequestObject(){
-    if (window.XMLHttpRequest()){
+    if (window.XMLHttpRequest){
       return (new XMLHttpRequest());
     }
     else if(window.ActiveXObject){
