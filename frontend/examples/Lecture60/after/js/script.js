@@ -15,6 +15,16 @@ var dc = {};
 
 var homeHtml = "snippets/home-snippet.html";
 
+var allCategoriesUrl = "http://davids-restaurant.herokuapp.com/categories.json";
+var categoriesTitleHtml = "snippets/categories-title-snippet.html";
+var categoryHtml = "snippets/category-snippet.html";
+
+var insertProperty = function(string, propName, propValue){
+  var propToReplace = "{{" + propName  "}";
+  string = string.replace(new RegExp(propToReplace, "g"), propValue);
+  return string;
+}
+
 // Convenience function for inserting innerHTML for 'select'
 var insertHtml = function (selector, html) {
   var targetElem = document.querySelector(selector);
@@ -42,7 +52,17 @@ $ajaxUtils.sendGetRequest(
   false); //false means i dont want you to preprocess this as json because it's an html snippet
 });
 
+dc.loadMenuCategories = function(){
+  showLoading("#main-content");
+  $ajaxUtils.sendGetRequest(
+    allCategoriesUrl,
+    buildAndShowCategoriesHTML
+    );
+}
 
+function buildAndShowCategoriesHTML(categories){
+  
+}
 global.$dc = dc;
 
 })(window);
