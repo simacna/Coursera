@@ -55,13 +55,18 @@ $ajaxUtils.sendGetRequest(
 dc.loadMenuCategories = function(){
   showLoading("#main-content");
   $ajaxUtils.sendGetRequest(
-    allCategoriesUrl,
-    buildAndShowCategoriesHTML
-    );
+    allCategoriesUrl, true); //true is default, don't need to add it but just here for demonstration
 }
 
 function buildAndShowCategoriesHTML(categories){
-  
+  //load title snippet of categories page
+  $ajaxUtils.sendGetRequest(
+    categoriesTitleHtml,
+    function(categoriesTitleHtml){})
+
+
+
+
 }
 global.$dc = dc;
 
