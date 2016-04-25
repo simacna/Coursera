@@ -62,11 +62,16 @@ function buildAndShowCategoriesHTML(categories){
   //load title snippet of categories page
   $ajaxUtils.sendGetRequest(
     categoriesTitleHtml,
-    function(categoriesTitleHtml){})
-
-
-
-
+    function(categoriesTitleHtml){
+      //retrieve single category snippet
+      $ajaxUtils.sendGetRequest(
+        categoryHtml, function(categoryHtml){
+          var categoriesViewHtml = buildCategoriesViewHtml(categories,
+                                                            categoriesTitleHtml,
+                                                            categoryHtml);
+          insertHtml("#main-content", categoriesViewHtml);
+        }, false);
+    }, false);
 }
 global.$dc = dc;
 
